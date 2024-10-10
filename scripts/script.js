@@ -1,5 +1,7 @@
 const myLibrary = [];
 const tableBody = document.querySelector("tbody");
+const newBtn = document.querySelector(".newBtn");
+const newDialog = document.querySelector("dialog");
 
 function Book(title, author, numPages, publicationYear, isRead) {
     this.title = title;
@@ -40,3 +42,5 @@ function addBookToLibrary() {
 myLibrary.push(new Book('Bionic Commando', 'F.X. Nine', '117', '1991', true), new Book('Star Wreck', 'Leah Rewolinski', '117', '1990', false), new Book('Bored of the Rings', 'The Harvard Lampoon', '149', '1969', true));
 
 addTableData(myLibrary);
+
+newBtn.addEventListener("click", () => newDialog.showModal());
