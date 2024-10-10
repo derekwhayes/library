@@ -84,6 +84,11 @@ cancelBtn.addEventListener("click", (e) => {
 
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    // restore html validation
+    if (!newBookForm.checkValidity()) {
+        newBookForm.reportValidity();
+        return;
+    }
     let newBook = new Book();
     let formData = new FormData(newBookForm, submitBtn);
     // probably not the right way but this assigns the formdata to a book object
