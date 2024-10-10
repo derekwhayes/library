@@ -41,9 +41,14 @@ function addBookToLibrary() {
     myLibrary.push(new Book(title));
 }
 
+// add some starter books
 myLibrary.push(new Book('Bionic Commando', 'F.X. Nine', '117', '1991', true), new Book('Star Wreck', 'Leah Rewolinski', '117', '1990', false), new Book('Bored of the Rings', 'The Harvard Lampoon', '149', '1969', true));
 
 addTableData(myLibrary);
 
 newBtn.addEventListener("click", () => newDialog.showModal());
 
+cancelBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    newDialog.close();
+});
