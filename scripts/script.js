@@ -1,10 +1,12 @@
 const myLibrary = [];
 const tableBody = document.querySelector("tbody");
 
-function Book(title, author, publicationYear) {
+function Book(title, author, numPages, publicationYear, isRead) {
     this.title = title;
     this.author = author;
+    this.numPages = numPages;
     this.publicationYear = publicationYear;
+    this.isRead = isRead;
 }
 
 function addTableData(myLibrary) {
@@ -22,7 +24,11 @@ function addTableData(myLibrary) {
         newCell = newRow.insertCell(-1);
         newCell.innerHTML = obj.author;
         newCell = newRow.insertCell(-1);
+        newCell.innerHTML = obj.numPages;
+        newCell = newRow.insertCell(-1);
         newCell.innerHTML = obj.publicationYear;
+        newCell = newRow.insertCell(-1);
+        newCell.innerHTML = obj.isRead;
     }
 }
 
@@ -31,6 +37,6 @@ function addBookToLibrary() {
     myLibrary.push(new Book(title));
 }
 
-myLibrary.push(new Book('Bionic Commando', 'F.X. Nine', '1991'), new Book('Star Wreck', 'Leah Rewolinski', '1990'), new Book('Bored of the Rings', 'The Harvard Lampoon', '1969'));
+myLibrary.push(new Book('Bionic Commando', 'F.X. Nine', '117', '1991', true), new Book('Star Wreck', 'Leah Rewolinski', '117', '1990', false), new Book('Bored of the Rings', 'The Harvard Lampoon', '149', '1969', true));
 
 addTableData(myLibrary);
