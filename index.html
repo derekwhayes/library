@@ -30,17 +30,34 @@
 
     <dialog>
         <form>
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author">
-            <label for="pages">Number of pages</label>
-            <input type="text" id="pages" name="pages">
-            <label for="year">Year Published</label>
-            <input type="text" id="year" name="year">
-            <label for="read">Read</label>
-            <input type="radio" id="read" name="read">
-            <button class="newBtn dialogBtn" type="submit">Submit</button>
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div>
+                <label for="pages">Number of pages</label>
+                <input type="number" id="pages" name="pages" min="0" max="99999">
+            </div>
+            <div>
+                <label for="year">Year Published</label>
+                <input type="number" id="year" name="year" min="-2500" max="2099">
+            </div>
+            <div>
+                <fieldset>
+                    <label for="read">Read</label>
+                    <input type="radio" id="read" name="read" value="true">
+                    <label for="notRead">Haven't Read Yet</label>
+                    <input type="radio" id="notRead" name="read" value="false">
+                </fieldset> 
+            </div>
+            <div class="dialogBtns">
+                <button id="cancelBtn" class="newBtn dialogBtn" type="submit">Cancel</button>
+                <button id="submitBtn" class="newBtn dialogBtn" type="submit">Submit</button>
+            </div>
         </form>
     </dialog>
 </body>

@@ -113,15 +113,39 @@ form {
     font-size: 1.5rem;
 }
 
+form > div {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 0;
+}
+
 label {
     font-weight: 700;
 }
 
 input {
     font-size: 1.5rem;
-    font-family: inherit;
     padding: 0.5rem;
     width: 500px;
+}
+
+input[type="number"] {
+    width: 20%;
+}
+
+fieldset {
+    border: none;
+    padding-left: 0;
+}
+
+input[type="radio"] {
+    width: 50px;
+}
+
+.dialogBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .dialogBtn {
