@@ -37,6 +37,8 @@ body {
 header {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 15rem;
     background-color: lightblue;
 }
 
@@ -44,6 +46,26 @@ header > h1 {
     font-weight: 900;
     font-size: 4rem;
     margin: 1rem;
+}
+
+button {
+    border: none;
+    padding: 1rem;
+    font-family: amaticsc;
+    font-weight: 700;
+    font-size: 2rem;
+    border-radius: 10px;
+    background-color: lightgreen;
+    box-shadow: 1px 1px 10px black;
+}
+
+button:hover {
+    background-color: rgb(153, 253, 153);
+}
+
+button:active {
+    box-shadow: none;
+    background-color: lightgreen;
 }
 
 main {
