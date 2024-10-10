@@ -35,7 +35,12 @@ function addTableData(myLibrary) {
         newCell = newRow.insertCell(-1);
         newCell.innerHTML = obj.publicationYear;
         newCell = newRow.insertCell(-1);
-        newCell.innerHTML = obj.isRead;
+        if (obj.isRead) {
+            newCell.innerHTML = '<svg fill="#000000" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><title>checkmark2</title><path d="M28.998 8.531l-2.134-2.134c-0.394-0.393-1.030-0.393-1.423 0l-12.795 12.795-6.086-6.13c-0.393-0.393-1.029-0.393-1.423 0l-2.134 2.134c-0.393 0.394-0.393 1.030 0 1.423l8.924 8.984c0.393 0.393 1.030 0.393 1.423 0l15.648-15.649c0.393-0.392 0.393-1.030 0-1.423z"></path></svg>';
+        }
+        else {
+            newCell.innerHTML = '<svg fill="#000000" width="50px" height="50px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><title>cancel2</title><path d="M19.587 16.001l6.096 6.096c0.396 0.396 0.396 1.039 0 1.435l-2.151 2.151c-0.396 0.396-1.038 0.396-1.435 0l-6.097-6.096-6.097 6.096c-0.396 0.396-1.038 0.396-1.434 0l-2.152-2.151c-0.396-0.396-0.396-1.038 0-1.435l6.097-6.096-6.097-6.097c-0.396-0.396-0.396-1.039 0-1.435l2.153-2.151c0.396-0.396 1.038-0.396 1.434 0l6.096 6.097 6.097-6.097c0.396-0.396 1.038-0.396 1.435 0l2.151 2.152c0.396 0.396 0.396 1.038 0 1.435l-6.096 6.096z"></path></svg>';
+        }
     }
 }
 
@@ -60,6 +65,7 @@ submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
     let newBook = new Book();
     let formData = new FormData(newBookForm, submitBtn);
+    // probably not the right way but this assigns the formdata to a book object
     for (let info of formData) {
         newBook[info[0]] = info[1];
     }
