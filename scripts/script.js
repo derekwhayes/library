@@ -4,6 +4,8 @@ const newBtn = document.querySelector(".newBtn");
 const newDialog = document.querySelector("dialog");
 const cancelBtn = document.querySelector("#cancelBtn");
 const submitBtn = document.querySelector("#submitBtn");
+const newBookForm = document.querySelector("form");
+
 
 function Book(title, author, numPages, publicationYear, isRead) {
     this.title = title;
@@ -15,6 +17,7 @@ function Book(title, author, numPages, publicationYear, isRead) {
 
 function addTableData(myLibrary) {
     let i = 0;
+    tableBody.innerHTML = '';
     for (let obj of myLibrary) {
         let newRow = document.createElement('tr');
         tableBody.appendChild(newRow);
@@ -52,3 +55,16 @@ cancelBtn.addEventListener("click", (e) => {
     e.preventDefault();
     newDialog.close();
 });
+
+submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    let newBook = new Book();
+    let formData = new FormData(newBookForm, submitBtn);
+    for (let info of formData) {
+        newBook[info[0]] = info[1];
+    }
+    myLibrary.push(newBook);
+    addTableData(myLibrary);
+    newBookForm.reset();
+    newDialog.close();
+})
