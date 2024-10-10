@@ -22,3 +22,59 @@ html {
     max-width: 100%;
     height: auto;
   }
+
+/* FONTS */
+@font-face {
+    font-family: amaticsc;
+    src: local(amaticsc);
+    src: url(../fonts/amaticsc.woff2);
+}
+
+body {
+    font-family: amaticsc;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+header > h1 {
+    font-weight: 900;
+    font-size: 4rem;
+    margin: 1rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin: 5rem;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th {
+    font-size: 2rem;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.title {
+    width: 50%;
+}
+
+.author {
+    width: 40%;
+}
+
+td {
+    font-size: 1.8rem;
+    border: 1px solid black;
+    text-align: center;
+    padding: 0.5rem;
+}
