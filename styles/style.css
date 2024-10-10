@@ -40,7 +40,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 15rem;
-    background-color: lightblue;
+    background-color: #81a4cd;
 }
 
 header > h1 {
@@ -56,17 +56,17 @@ header > h1 {
     font-weight: 700;
     font-size: 2rem;
     border-radius: 10px;
-    background-color: lightgreen;
+    background-color: #abfaa9;
     box-shadow: 1px 1px 10px black;
 }
 
 .newBtn:hover {
-    background-color: rgb(153, 253, 153);
+    background-color: #ebfcea;
 }
 
 .newBtn:active {
     box-shadow: none;
-    background-color: lightgreen;
+    background-color: #abfaa9;
 }
 
 /* MAIN */
@@ -86,7 +86,7 @@ th {
     font-size: 2rem;
     border: 1px solid black;
     padding: 1rem;
-    background-color: lightgreen;
+    background-color: #abfaa9;
 }
 
 .title {
@@ -105,7 +105,7 @@ td {
 }
 
 svg:hover {
-    fill: red;
+    fill: #054a91;
 }
 
 /* DIALOG */
