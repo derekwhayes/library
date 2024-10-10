@@ -39,6 +39,8 @@ function addTableData(myLibrary) {
         newCell.setAttribute('data-index', i);
         // determine if isRead needs a checkmark or an x
         newCell.innerHTML = obj.isRead ? check : x;
+        newCell.style.cursor = "pointer";
+        // newCell.firstChild.style.fill = 'red'
 
         newCell.addEventListener('click', (e) => {
             // closest to allow clicking on icon
@@ -51,15 +53,14 @@ function addTableData(myLibrary) {
         newCell = newRow.insertCell(-1);
         newCell.setAttribute('data-index', i);
         newCell.innerHTML = trash;
+        newCell.style.cursor = "pointer";
 
         newCell.addEventListener('click', (e)=> {
             const bookIndex = e.target.closest('td').getAttribute('data-index');
             myLibrary.splice(bookIndex, 1);
             addTableData(myLibrary);
         })
-
         i++;
-
     }
 }
 

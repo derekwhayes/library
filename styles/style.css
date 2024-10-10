@@ -104,6 +104,10 @@ td {
     padding: 0.5rem;
 }
 
+svg:hover {
+    fill: red;
+}
+
 /* DIALOG */
 form {
     display: flex;
